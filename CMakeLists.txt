@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 
 set(PROJECT_NAME "c_result")
-set(PROJECT_VERSION 0.1)
+set(PROJECT_VERSION 0.2)
 set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_COMPILER clang)
 set(CMAKE_CXX_COMPILER clang+)
