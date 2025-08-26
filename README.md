@@ -1,12 +1,14 @@
 # c_result
 This is my attempt at a lightweight, header-only, cross-platform, C99-compatible C library for elegant error handling using a `Result` type pattern, remotely similar to Rust's `Result` or Haskell's `Either`. This library provides a clean way to handle both success and error states without complex exception mechanisms.
+
+*⚠️ Attention: Use with care and review the code before you use it in production.*
 ## Features
-- **Header-only**: Just include `c_result.h` in your project
-- **Type-safe error handling (manual)**: Clear separation between success and error states
-- **Rich error codes**: Predefined common error codes with meaningful descriptions
-- **Custom error support**: Easy extension for application-specific error codes
-- **Memory safe (manual)**: Proper memory management for error messages and values
-- **Debug support**: Optional runtime checks for safe value access in debug builds
+- **📄 Header-only**: Just include `c_result.h` in your project
+- **✅ Type-safe error handling (manual)**: Clear separation between success and error states
+- **🧐 Rich error codes**: Predefined common error codes with meaningful descriptions
+- **♟️ Custom error support**: Easy extension for application-specific error codes
+- **🛟 Memory safe (manual)**: Proper memory management for error messages and values
+- **🔬 Debug support**: Optional runtime checks for safe value access in debug builds
 
 ## Usage
 ### Basic Example
@@ -36,7 +38,7 @@ int main() {
 ```
 
 ### File Processing Example
-For a more complete version, check `test/c_result.c` file in the repo.
+For a more complete test version of this example, check [`test/c_result.c`](test/c_result.c) file in the repo.
 ```c
 Result read_file_contents(const char* filename) {
     if (!filename) {
@@ -68,7 +70,7 @@ The library provides numerous predefined error codes:
 | `ERR_NULL_POINTER` (-4) | Unexpected null pointer |
 | ... | ... |
 
-Check out `c_result.h` defines at the top of the file, or use your own codes. Error codes of 0 to -999 are reserved.
+Check out [`c_result.h`](include/c_result.h) defines at the top of the file, or use your own codes. Error codes of 0 to -999 are reserved.
 
 Application-specific error codes should start at `APP_RESULT_CODE_START` (-1000).
 ### Key Functions and Macros
@@ -105,7 +107,7 @@ gcc -DDEBUG -o myapp myapp.c
 In debug mode, `ACCESS_RESULT_VALUE` will check if you're trying to access a value from an error result and print a warning message.
 
 ## Integration
-Since this is a header-only library, simply copy `c_result.h` to your project and include it:
+Since this is a header-only library, simply copy [`c_result.h`](include/c_result.h) to your project and include it:
 ```c
 #include "c_result.h"
 ```
@@ -114,3 +116,6 @@ This library is provided under BSD-3-Clause license. Feel free to use and modify
 
 ## Contributing
 Contributions are welcome! Please ensure any changes maintain backward compatibility and include appropriate tests.
+
+# Author
+Made with ❤️ by Mohammadreza Hajianpour
